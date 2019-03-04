@@ -1,0 +1,20 @@
+        <div class="" id="">
+          <ul class="">
+            <li class="">
+              <a class="" href="http://localhost:8000/">Pizza<span class="sr-only"></span></a>
+
+            <li class="">
+                {% with totail_items=cart|length %}
+                {% if cart|length > 0 %}
+                    <a class="" href="{% url 'cart:cart_detail' %}">
+                      Корзина <span class="badge badge-secondary">{{ totail_items }}</span>
+                    </a>
+                    {% else %}
+                    <a class="" href="{% url 'cart:cart_detail' %}">
+                      Корзина
+                    </a>
+                {% endif %}
+            {% endwith %}
+              </li>
+          </ul>
+        </div>

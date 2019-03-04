@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+      <div class="container">
+
+      <div class="row">
+        <div class="col-sm-4">
+            <ul class="list-group">
+                      <li class="list-group-item">
+                        <a href="/">Все категории</a>
+                    </li>
+                    <br>
+                {% for category in categories %}
+                    <li class="list-group-item">
+                        <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <div class="col-sm-4">
+          {% for product in products %}
+
+                        <th class="card-title">{{product.title}}</th>
+                        <th class="card-text">{{product.description}}</th>
+                        <form action="{% url "cart:cart_add" product.id%}" method="post">
+                        {% csrf_token %}
+                        
+                        <input action="{% url "cart:cart_add" product.id % } method="post" type="number" name="quantity">
+                        <input class="btn" type = "submit" value="Добавить" >
+
+</form>
+
+                    </div>
+{% endfor %}
+
+        </div>
+
+        <br><div class="col-sm-4">
+
+</div>
+      </div>
+
+
+    </div>
+{% endblock %}
