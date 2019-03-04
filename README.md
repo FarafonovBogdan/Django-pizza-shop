@@ -1,5 +1,5 @@
 # Django-pizza-shop
-Онлайн-магазина с использованием Django Framework 
+Онлайн-магазин с использованием Django Framework 
 # Pizza Shop
   Выполненный на django версии 2.1.7.
 # Функции магазина:
